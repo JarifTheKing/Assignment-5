@@ -217,68 +217,129 @@ document.getElementById('clear-btn').addEventListener('click',
 
 // copy btn
 
-function copyCount(id) {
+// function copyCount(id) {
+//     const CopyBtnCount = document.getElementById('nav-copy-count');
+//     const availableCopyCount = parseInt(CopyBtnCount.innerText);
+
+//     const newCopyAmount = availableCopyCount + 1;
+
+
+//     CopyBtnCount.innerText = newCopyAmount;
+
+
+//     alert(`Here the Total Copies: ${newCopyAmount}`);
+// }
+
+
+// document.getElementById("copy-btn-1").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-1');
+//     }
+// );
+// document.getElementById("copy-btn-2").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-2');
+//     }
+// );
+// document.getElementById("copy-btn-3").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-3');
+//     }
+// );
+// document.getElementById("copy-btn-4").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-4');
+//     }
+// );
+// document.getElementById("copy-btn-5").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-5');
+//     }
+// );
+// document.getElementById("copy-btn-6").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-6');
+//     }
+// );
+// document.getElementById("copy-btn-7").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-7');
+//     }
+// );
+// document.getElementById("copy-btn-8").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-8');
+//     }
+// );
+// document.getElementById("copy-btn-9").addEventListener('click',
+//     function () {
+//         copyCount('copy-btn-9');
+//     }
+// );
+
+
+
+// hotline number copy and paste 
+function copyHotline(id, numberId) {
+    const numberText = document.getElementById(numberId).innerText;
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(numberText);
+
+    
     const CopyBtnCount = document.getElementById('nav-copy-count');
-    const availableCopyCount = parseInt(CopyBtnCount.innerText);
+    CopyBtnCount.innerText = parseInt(CopyBtnCount.innerText) + 1;
 
-    const newCopyAmount = availableCopyCount + 1;
+    
+    alert('Number copied: ' + numberText + '\nTotal Copies: ' + CopyBtnCount.innerText);
 
-
-    CopyBtnCount.innerText = newCopyAmount;
-
-
-    alert(`Here the Total Copies: ${newCopyAmount}`);
 }
 
 
 document.getElementById("copy-btn-1").addEventListener('click',
     function () {
-        copyCount('copy-btn-1');
+        copyHotline('copy-btn-1', 'card-1-serviceNumber');
     }
 );
 document.getElementById("copy-btn-2").addEventListener('click',
     function () {
-        copyCount('copy-btn-2');
+        copyHotline('copy-btn-2', 'card-2-serviceNumber');
     }
 );
 document.getElementById("copy-btn-3").addEventListener('click',
     function () {
-        copyCount('copy-btn-3');
+        copyHotline('copy-btn-3', 'card-3-serviceNumber');
     }
 );
 document.getElementById("copy-btn-4").addEventListener('click',
     function () {
-        copyCount('copy-btn-4');
+        copyHotline('copy-btn-4', 'card-4-serviceNumber');
     }
 );
 document.getElementById("copy-btn-5").addEventListener('click',
     function () {
-        copyCount('copy-btn-5');
+        copyHotline('copy-btn-5', 'card-5-serviceNumber');
     }
 );
 document.getElementById("copy-btn-6").addEventListener('click',
     function () {
-        copyCount('copy-btn-6');
+        copyHotline('copy-btn-6', 'card-6-serviceNumber');
     }
 );
 document.getElementById("copy-btn-7").addEventListener('click',
     function () {
-        copyCount('copy-btn-7');
+        copyHotline('copy-btn-7', 'card-7-serviceNumber');
     }
 );
 document.getElementById("copy-btn-8").addEventListener('click',
     function () {
-        copyCount('copy-btn-8');
+        copyHotline('copy-btn-8', 'card-8-serviceNumber');
     }
 );
-document.getElementById("copy-btn-9").addEventListener('click',
-    function () {
-        copyCount('copy-btn-9');
-    }
+document.getElementById("copy-btn-9").addEventListener('click', function () {
+    copyHotline('copy-btn-9', 'card-9-serviceNumber');
+}
 );
-
-
-
 
 
 
