@@ -1,8 +1,6 @@
 
 
-{/* <p id="love-count" class="mr-2 font-bold text-base sm:text-xl">0</p> */ }
 
-{/* <img id="red-love" class="w-[24px] h-[24px] " src="./assets/heart.png" alt="Heart" /> */ }
 
 function emptyLoveCount(id) {
     const redLove = document.getElementById('red-love')
