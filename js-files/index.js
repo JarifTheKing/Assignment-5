@@ -2,7 +2,7 @@
 
 
 
-
+//function to click empty heart 
 function emptyLoveCount(id) {
     const redLove = document.getElementById('red-love')
 
@@ -15,6 +15,7 @@ function emptyLoveCount(id) {
     loveCount.innerText = newAmount
 }
 
+// empty heart cards
 document.getElementById('empty-love1').addEventListener('click',
     function () {
         const getEmptyLove = emptyLoveCount('empty-love1')
@@ -83,97 +84,139 @@ document.getElementById('empty-love9').addEventListener('click',
 
 
 
-
-
-
-
-
 // Function to add call history 
-function addCallToHistory(title, number) {
+
+function callHistoryAdded(title, number) {
     const callHistoryContainer = document.getElementById('call-history-container');
 
-    // create div
-    const callEntry = document.createElement('div');
-    callEntry.className = 'flex items-center justify-between rounded-lg mb-6 shadow-sm px-6 py-2';
 
-    // Left side (title + number)
+    const callDiv = document.createElement('div');
+    callDiv.className = 'flex items-center justify-between rounded-lg mb-6 shadow-sm px-6 py-2';
+
+
     const leftDiv = document.createElement('div');
     leftDiv.className = 'items-center gap-2';
 
-    const titleEl = document.createElement('h3');
-    titleEl.className = 'font-bold text-[#5c5c5c]';
-    titleEl.innerText = title;
+    const titleTag = document.createElement('h3');
+    titleTag.className = 'font-bold text-[#5c5c5c]';
+    titleTag.innerText = title;
 
-    const numberEl = document.createElement('p');
-    numberEl.className = 'text-[#5c5c5c] font-semibold';
-    numberEl.innerText = number;
+    const numberElement = document.createElement('p');
+    numberElement.className = 'text-[#5c5c5c] font-semibold';
+    numberElement.innerText = number;
 
-    leftDiv.appendChild(titleEl);
-    leftDiv.appendChild(numberEl);
+    leftDiv.appendChild(titleTag);
+    leftDiv.appendChild(numberElement);
 
-    // Right side (time)
-    const timeEl = document.createElement('p');
-    timeEl.className = 'text-[#5c5c5c] font-semibold';
-    timeEl.innerText = new Date().toLocaleTimeString();
 
-    // Append left + right into entry
-    callEntry.appendChild(leftDiv);
-    callEntry.appendChild(timeEl);
+    const timeP = document.createElement('p');
+    timeP.className = 'text-[#5c5c5c] font-semibold';
+    timeP.innerText = new Date().toLocaleTimeString();
 
-    // ✅ Add to Call History section
-    const historyWrapper = callHistoryContainer.querySelector('.px-4');
-    historyWrapper.prepend(callEntry);
+
+    callDiv.appendChild(leftDiv);
+    callDiv.appendChild(timeP);
+
+    // Append Call History div
+    const callHistoryList = callHistoryContainer.querySelector('.px-4');
+    callHistoryList.append(callDiv);
 }
 
-// Function to make a call
+
+
+
+
+
+
+
+
+
+// Function for making the call
 function callService(titleId, serviceNameId, numberId) {
-    const serviceTitle = document.getElementById(titleId).innerText;   // Bangla title
-    const serviceName = document.getElementById(serviceNameId).innerText; // English name
+    const serviceTitle = document.getElementById(titleId).innerText;
+    const serviceName = document.getElementById(serviceNameId).innerText;
     const serviceNumber = document.getElementById(numberId).innerText;
 
-    const coinCountElement = document.getElementById('coin-count');
-    const currentCoins = parseInt(coinCountElement.innerText);
+    const coinCountId = document.getElementById('coin-count');
+    const availableCoins = parseInt(coinCountId.innerText);
 
-    if (currentCoins < 20) {
+    if (availableCoins < 20) {
         alert('Please Purchase more Coin!');
         return;
     }
 
-    const newCoinAmount = currentCoins - 20;
-    coinCountElement.innerText = newCoinAmount;
+    const newCoinAmount = availableCoins - 20;
+    coinCountId.innerText = newCoinAmount;
 
-    // ✅ Alert with serviceName (English)
-    alert(`📞 Calling ${serviceName} (${serviceNumber})`);
+    alert(`📞 Calling... ${serviceName} (${serviceNumber})`);
 
-    // ✅ Call History with serviceTitle (Bangla)
-    addCallToHistory(serviceTitle, serviceNumber);
+    // Call History -(function call) 
+    callHistoryAdded(serviceTitle, serviceNumber);
 }
 
-// Attach event listeners (cards 1–9)
-document.getElementById('call1').addEventListener('click', function () {
-    callService('card-1-title', 'card-1-serviceName', 'card-1-serviceNumber');
-});
-document.getElementById('call2').addEventListener('click', function () {
-    callService('card-2-title', 'card-2-serviceName', 'card-2-serviceNumber');
-});
-document.getElementById('call3').addEventListener('click', function () {
-    callService('card-3-title', 'card-3-serviceName', 'card-3-serviceNumber');
-});
-document.getElementById('call4').addEventListener('click', function () {
-    callService('card-4-title', 'card-4-serviceName', 'card-4-serviceNumber');
-});
-document.getElementById('call5').addEventListener('click', function () {
-    callService('card-5-title', 'card-5-serviceName', 'card-5-serviceNumber');
-});
-document.getElementById('call6').addEventListener('click', function () {
-    callService('card-6-title', 'card-6-serviceName', 'card-6-serviceNumber');
-});
-document.getElementById('call7').addEventListener('click', function () {
-    callService('card-7-title', 'card-7-serviceName', 'card-7-serviceNumber');
-});
-document.getElementById('call8').addEventListener('click', function () {
-    callService('card-8-title', 'card-8-serviceName', 'card-8-serviceNumber');
-});
-document.getElementById('call9').addEventListener('click', function () {
-    callService('card-9-title', 'card-9-serviceName', 'card-9-serviceNumber');
-});
+
+
+
+
+
+
+// event listener for cards
+document.getElementById('call1').addEventListener('click',
+    function () {
+        callService('card-1-title', 'card-1-serviceName', 'card-1-serviceNumber');
+    }
+);
+document.getElementById('call2').addEventListener('click',
+    function () {
+        callService('card-2-title', 'card-2-serviceName', 'card-2-serviceNumber');
+    }
+);
+document.getElementById('call3').addEventListener('click',
+    function () {
+        callService('card-3-title', 'card-3-serviceName', 'card-3-serviceNumber');
+    }
+);
+document.getElementById('call4').addEventListener('click',
+    function () {
+        callService('card-4-title', 'card-4-serviceName', 'card-4-serviceNumber');
+    }
+);
+document.getElementById('call5').addEventListener('click',
+    function () {
+        callService('card-5-title', 'card-5-serviceName', 'card-5-serviceNumber');
+
+    }
+);
+document.getElementById('call6').addEventListener('click',
+    function () {
+        callService('card-6-title', 'card-6-serviceName', 'card-6-serviceNumber');
+    }
+);
+document.getElementById('call7').addEventListener('click',
+    function () {
+        callService('card-7-title', 'card-7-serviceName', 'card-7-serviceNumber');
+
+    }
+);
+document.getElementById('call8').addEventListener('click',
+    function () {
+        callService('card-8-title', 'card-8-serviceName', 'card-8-serviceNumber');
+    }
+);
+document.getElementById('call9').addEventListener('click',
+    function () {
+        callService('card-9-title', 'card-9-serviceName', 'card-9-serviceNumber');
+    }
+);
+
+
+
+// Clear btn event
+document.getElementById('clear-btn').addEventListener('click',
+    function () {
+        const callHistoryContainer = document.getElementById('call-history-container');
+        const callHistoryList = callHistoryContainer.querySelector('.px-4');
+
+        callHistoryList.innerHTML = '';
+    }
+)
