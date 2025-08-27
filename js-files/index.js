@@ -6,7 +6,6 @@
 function emptyLoveCount(id) {
     const redLove = document.getElementById('red-love')
 
-
     const loveCount = document.getElementById('love-count')
 
     const currentAmount = parseInt(loveCount.innerText)
@@ -18,64 +17,55 @@ function emptyLoveCount(id) {
 // empty heart cards
 document.getElementById('empty-love1').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love1')
-
+        emptyLoveCount('empty-love1')
     }
 )
 
 document.getElementById('empty-love2').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love2')
-
+        emptyLoveCount('empty-love2')
     }
 )
 
 document.getElementById('empty-love3').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love3')
-
+        emptyLoveCount('empty-love3')
     }
 )
 
 document.getElementById('empty-love4').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love4')
-
+        emptyLoveCount('empty-love4')
     }
 )
 
 document.getElementById('empty-love5').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love5')
-
+        emptyLoveCount('empty-love5')
     }
 )
 
 document.getElementById('empty-love6').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love6')
-
+        emptyLoveCount('empty-love6')
     }
 )
 
 document.getElementById('empty-love7').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love7')
-
+        emptyLoveCount('empty-love7')
     }
 )
 
 document.getElementById('empty-love8').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love8')
-
+        emptyLoveCount('empty-love8')
     }
 )
 
 document.getElementById('empty-love9').addEventListener('click',
     function () {
-        const getEmptyLove = emptyLoveCount('empty-love9')
-
+        emptyLoveCount('empty-love9')
     }
 )
 
@@ -220,3 +210,83 @@ document.getElementById('clear-btn').addEventListener('click',
         callHistoryList.innerHTML = '';
     }
 )
+
+
+
+
+
+// copy btn
+
+function copyCount(id) {
+    const CopyBtnCount = document.getElementById('nav-copy-count');
+    const availableCopyCount = parseInt(CopyBtnCount.innerText);
+
+    const newCopyAmount = availableCopyCount + 1;
+
+
+    CopyBtnCount.innerText = newCopyAmount;
+
+
+    alert(`Here the Total Copies: ${newCopyAmount}`);
+}
+
+
+document.getElementById("copy-btn-1").addEventListener('click',
+    function () {
+        copyCount('copy-btn-1');
+    }
+);
+document.getElementById("copy-btn-2").addEventListener('click',
+    function () {
+        copyCount('copy-btn-2');
+    }
+);
+document.getElementById("copy-btn-3").addEventListener('click',
+    function () {
+        copyCount('copy-btn-3');
+    }
+);
+document.getElementById("copy-btn-4").addEventListener('click',
+    function () {
+        copyCount('copy-btn-4');
+    }
+);
+document.getElementById("copy-btn-5").addEventListener('click',
+    function () {
+        copyCount('copy-btn-5');
+    }
+);
+document.getElementById("copy-btn-6").addEventListener('click',
+    function () {
+        copyCount('copy-btn-6');
+    }
+);
+document.getElementById("copy-btn-7").addEventListener('click',
+    function () {
+        copyCount('copy-btn-7');
+    }
+);
+document.getElementById("copy-btn-8").addEventListener('click',
+    function () {
+        copyCount('copy-btn-8');
+    }
+);
+document.getElementById("copy-btn-9").addEventListener('click',
+    function () {
+        copyCount('copy-btn-9');
+    }
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
